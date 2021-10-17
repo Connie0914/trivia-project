@@ -1,13 +1,14 @@
 import { ReactNode } from 'react';
 
 export type Props = {
+  className?: string;
   children: ReactNode;
 };
 
 export const Button = ( props: Props ): JSX.Element => {
-  const { children } = props;
+  const { className, children } = props;
   return (
-    <button>{children}</button>
+    <button className={className}>{children}</button>
   );
   
 };
