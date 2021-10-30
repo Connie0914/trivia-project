@@ -9,3 +9,8 @@
 
 1. yarn install
 2. http://localhost:3000/ にアクセス
+
+## Storybook
+
+1. yarn storybook
+2. http://localhost:6006/ にアクセス
