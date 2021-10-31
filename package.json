@@ -21,6 +21,7 @@
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "eslint",
+      "prettier '**/*.{ts,tsx}' --write --config ./.prettierrc",
       "git add"
     ]
   },
