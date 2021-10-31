@@ -13,7 +13,7 @@ const Template: Story<Props> = () => {
       <Sample />
       <p>Image Sample</p>
     </>
-  )
+  );
 };
 
 export const Default = Template.bind({});
