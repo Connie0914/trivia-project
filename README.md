@@ -1,4 +1,4 @@
-# ✨関西の誇り✨
+# ✨ 関西の誇り ✨
 
 ## Required Software
 

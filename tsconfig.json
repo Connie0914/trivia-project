@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "charset": "utf8",
-    "baseUrl": "./src",
+    "baseUrl": "./src"
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

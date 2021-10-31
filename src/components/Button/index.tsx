@@ -5,10 +5,7 @@ export type Props = {
   children: ReactNode;
 };
 
-export const Button = ( props: Props ): JSX.Element => {
+export const Button = (props: Props): JSX.Element => {
   const { className, children } = props;
-  return (
-    <button className={className}>{children}</button>
-  );
-  
+  return <button className={className}>{children}</button>;
 };
