@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { AuthLayout } from '../layouts/AuthLayout';
+import { AuthLayout } from '../layouts/authLayout';
 import Image from 'next/image';
 
 const Auth: NextPage = () => {
