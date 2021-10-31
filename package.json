@@ -13,6 +13,17 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint",
+      "git add"
+    ]
+  },
   "dependencies": {
     "next": "^11.1.2",
     "react": "^17.0.2",
