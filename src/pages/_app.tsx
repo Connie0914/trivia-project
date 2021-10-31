@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
 import 'tailwindcss/tailwind.css'
+import '../service/firebase'
 
 const App = ({
   Component,
