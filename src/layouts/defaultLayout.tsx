@@ -1,4 +1,3 @@
-import content from '*.png';
 import { ReactNode } from 'react';
 import { Header } from '../components/Header';
 
@@ -7,7 +6,6 @@ export type Props = {
 };
 
 export const DefaultLayout = ({ children }: Props): JSX.Element => {
-  const hoge = 1;
   return (
     <>
       <Header />
