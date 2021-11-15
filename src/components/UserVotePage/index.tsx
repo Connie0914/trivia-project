@@ -1,18 +1,9 @@
 import React, { useCallback, useState } from 'react';
-import { ClickButton } from 'components/ClickButton';
-import { Text } from 'components/InputBox';
 
-// const voteValue: string = document.getElementById('vote')!.value;
+import { Text } from 'components/InputBox';
+export type Props = {};
 
 export const UserVotePage = (): JSX.Element => {
-  // const [text, settext] = useState('');
-  // const handleChange = useCallback(
-  //   (e) => {
-  //     settext(e.target.value.trim());
-  //   },
-  //   [settext]
-  // );
-  // console.log(settext);
   return (
     <div>
       <div className="text-center">
@@ -25,23 +16,8 @@ export const UserVotePage = (): JSX.Element => {
           <li className="text-4xl font-bold">第４回エンジビアの泉</li>
         </ul>
         <Text />
-        {/* <textarea
-          name=""
-          id="vote"
-          cols="50"
-          rows="3"
-          placeholder="エンジビアを入力する"
-          maxLength="100"
-          className="text-4xl"
-          value={text}
-          onChange={handleChange}
-        ></textarea> */}
       </div>
-      <div>
-        {/* <button onClick={handleChange}>保存</button> */}
-        {/* <ClickButton text="保存する" /> */}
-        {/* <ClickButton text="キャンセル" /> */}
-      </div>
+      <div></div>
     </div>
   );
 };
