@@ -1,9 +1,9 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 
 import { Text } from 'components/InputBox';
 export type Props = {};
 
-export const UserVotePage = (): JSX.Element => {
+export const UserVotePage = (props: any): JSX.Element => {
   return (
     <div>
       <div className="text-center">
@@ -17,7 +17,6 @@ export const UserVotePage = (): JSX.Element => {
         </ul>
         <Text />
       </div>
-      <div></div>
     </div>
   );
 };
