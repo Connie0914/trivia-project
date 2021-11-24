@@ -1,2 +1,0 @@
-// Sample
-export const index = () => {};

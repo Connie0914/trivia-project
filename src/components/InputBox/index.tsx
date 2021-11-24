@@ -1,41 +1,39 @@
-import React, { useState } from 'react';
-
-export type Props = {};
+import { useState } from 'react';
 
 export const Text = () => {
-  const [date, setDate] = useState('');
-  const inputDate = () => {
-    console.log(date);
-    if (date !== '') {
-      // idの直接操作はアンチのため、改善点を探す必要がある
-      const box = document.getElementById('box') as HTMLInputElement;
-      box.disabled = true;
-    }
-  };
+  const [disable, setDisable] = useState(false);
+  const [input, setInput] = useState('');
   return (
     <div>
       <div className="text-center ">
         <div>
           <textarea
             id="box"
-            cols="50"
-            rows="3"
+            cols={50}
+            rows={3}
             placeholder="エンジビアを入力する"
-            maxLength="100"
+            maxLength={100}
             className="text-4xl resize-none outline-none"
             name="todo"
-            value={date}
+            value={input}
+            disabled={disable}
             onChange={(e) => {
-              setDate(e.target.value);
+              setInput(e.target.value);
             }}
           ></textarea>
         </div>
 
         <button
-          onClick={inputDate}
+          onClick={() => setDisable(true)}
           className="bg-blue-400 text-white text-xl py-5 px-8 m-8 rounded-xl"
         >
           保存する
+        </button>
+        <button
+          onClick={() => setInput('')}
+          className="bg-blue-400 text-white text-xl py-5 px-8 m-8 rounded-xl"
+        >
+          クリア
         </button>
       </div>
     </div>
