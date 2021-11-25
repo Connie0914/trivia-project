@@ -9,9 +9,6 @@ export const Text = (props: any) => {
   const inputDate = () => {
     console.log('date', date);
     if (date !== '') {
-      // idの直接操作はアンチのため、改善点を探す必要がある
-      const box = document.getElementById('box') as HTMLInputElement;
-      box.disabled = true;
       setBoolean((boolean) => {
         return false;
       });
@@ -20,9 +17,6 @@ export const Text = (props: any) => {
 
   const editDate = () => {
     if (date !== '') {
-      // idの直接操作はアンチのため、改善点を探す必要がある
-      const box = document.getElementById('box') as HTMLInputElement;
-      box.disabled = false;
       setBoolean((boolean) => {
         return true;
       });
@@ -31,9 +25,6 @@ export const Text = (props: any) => {
 
   const deleteDate = () => {
     setDate((date) => {
-      const box = document.getElementById('box') as HTMLInputElement;
-
-      box.disabled = false;
       return '';
     });
     setBoolean((boolean) => {
@@ -54,7 +45,7 @@ export const Text = (props: any) => {
             className="text-4xl resize-none outline-none"
             name="todo"
             value={date}
-            // キャンセルボタンの挙動　入力途中に押した場合、保存されていたものに戻すには？
+            disabled={!boolean}
             onChange={(e) => {
               setDate(e.target.value);
             }}
@@ -90,7 +81,7 @@ export const Text = (props: any) => {
 
       {boolean ? (
         <button
-          onClick={inputDate}
+          onClick={() => setDate('')}
           className="bg-blue-400 text-white text-xl py-5 px-8 m-8 rounded-xl"
         >
           キャンセル
@@ -99,3 +90,45 @@ export const Text = (props: any) => {
     </div>
   );
 };
+
+// import { useState } from 'react';
+
+// export const Text = () => {
+//   const [disable, setDisable] = useState(false);
+//   const [input, setInput] = useState('');
+//   return (
+//     <div>
+//       <div className="text-center ">
+//         <div>
+//           <textarea
+//             id="box"
+//             cols={50}
+//             rows={3}
+//             placeholder="エンジビアを入力する"
+//             maxLength={100}
+//             className="text-4xl resize-none outline-none"
+//             name="todo"
+//             value={input}
+//             disabled={disable}
+//             onChange={(e) => {
+//               setInput(e.target.value);
+//             }}
+//           ></textarea>
+//         </div>
+
+//         <button
+//           onClick={() => setDisable(true)}
+//           className="bg-blue-400 text-white text-xl py-5 px-8 m-8 rounded-xl"
+//         >
+//           保存する
+//         </button>
+//         <button
+//           onClick={() => setInput('')}
+//           className="bg-blue-400 text-white text-xl py-5 px-8 m-8 rounded-xl"
+//         >
+//           クリア
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
