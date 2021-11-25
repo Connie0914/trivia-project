@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import { AdminBroadCastList } from 'components/AdminBroadCastList';
 import { DefaultLayout } from 'layouts/defaultLayout';
 
-const Index: NextPage = () => {
+const adminBroadCastList: NextPage = () => {
   return (
     <DefaultLayout>
       <AdminBroadCastList />
@@ -10,4 +10,4 @@ const Index: NextPage = () => {
   );
 };
 
-export default Index;
+export default adminBroadCastList;
