@@ -14,3 +14,8 @@
 
 1. yarn storybook
 2. http://localhost:6006/ にアクセス
+
+## react-icon
+
+1. `$ yarn add yarn add react-icons --save`
+2. `$ yarn add @react-icons/all-files --save`
