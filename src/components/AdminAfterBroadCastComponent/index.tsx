@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import Link from 'next/link';
 import { Label } from 'components/Label';
 
-export const AdminABCComponent = () => {
+export const AdminAfterBroadCastComponent = () => {
   const [isShow, setIsShow] = useState(false);
   const [urlInput, setUrlInput] = useState('');
 
@@ -14,8 +14,6 @@ export const AdminABCComponent = () => {
     setIsShow(true);
   }, []);
 
-  const url = urlInput.replace('/watch?v=', '/embed/');
-
   return (
     <div className="mx-auto max-w-2xl">
       <div className="flex justify-center pt-10 pb-3">
@@ -24,20 +22,20 @@ export const AdminABCComponent = () => {
       <h1 className="text-4xl font-bold pb-7 text-center">
         第4回エンジビアの泉
       </h1>
-      {isShow ? (
+      {isShow && (
         <div>
           <iframe
             className="mb-10"
             width="675"
             height="380"
-            src={`${url}`}
+            src={`${urlInput.replace('/watch?v=', '/embed/')}`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
         </div>
-      ) : null}
+      )}
       <form className="w-full max-w-2xl mb-6">
         <input
           type="url"

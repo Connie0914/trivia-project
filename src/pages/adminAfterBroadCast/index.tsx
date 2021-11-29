@@ -1,11 +1,11 @@
 import { NextPage } from 'next';
 import { DefaultLayout } from 'layouts/defaultLayout';
-import { AdminABCComponent } from 'components/AdminABCComponent';
+import { AdminAfterBroadCastComponent } from 'components/AdminAfterBroadCastComponent';
 
 const AdminAfterBroadCast: NextPage = () => {
   return (
     <DefaultLayout>
-      <AdminABCComponent />
+      <AdminAfterBroadCastComponent />
     </DefaultLayout>
   );
 };
