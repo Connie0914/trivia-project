@@ -1,8 +1,14 @@
 import { useDraggable } from '@dnd-kit/core';
+import { ReactNode } from 'react';
 
-export function Draggable(props: any) {
+type Props = {
+  id: string;
+  children: ReactNode;
+};
+
+export function Draggable({ id, children }: Props) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: props.id,
+    id: id,
   });
   const style = transform
     ? {
@@ -11,14 +17,14 @@ export function Draggable(props: any) {
     : undefined;
 
   return (
-    <li
+    <div
       ref={setNodeRef}
       style={style}
       {...listeners}
       {...attributes}
       className="bg-white text-black text-sm py-3 rounded mt-3 shadow"
     >
-      {props.children}
-    </li>
+      {children}
+    </div>
   );
 }

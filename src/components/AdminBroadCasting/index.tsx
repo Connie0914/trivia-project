@@ -1,26 +1,15 @@
-import { useState } from 'react';
 import Link from 'next/link';
 import { DndContext } from '@dnd-kit/core';
 import { Label } from 'components/Label';
 import { Droppable } from 'components/Droppable';
-import { Draggable } from 'components/Draggable';
 import { FutureListComponents } from 'components/FutureList';
+import { DraggableMarkup } from 'components/DraggableMarkup';
+import { useDragEnd } from 'hooks/useHandleDragEnd';
 
 export const AdminBroadCasting = (): JSX.Element => {
   const containers = ['A'];
   const wraps = ['B'];
-  const [parent, setParent] = useState(null);
-
-  const draggableMarkup = (
-    <Draggable id="draggable">
-      <p className="text-base pb-5 mx-4">
-        HTMLにはポータルという便利な要素がある
-      </p>
-      <div className="flex justify-between items-center">
-        <div className="ml-4">👨‍💼 松平 ケン</div>
-      </div>
-    </Draggable>
-  );
+  const { parent, handleDragEnd } = useDragEnd();
 
   return (
     <div className="items-center w-3/4 mx-auto">
@@ -46,7 +35,9 @@ export const AdminBroadCasting = (): JSX.Element => {
               フューチャー前
             </div>
             <ul>
-              <Droppable>{parent === null ? draggableMarkup : null}</Droppable>
+              <Droppable id="aaa">
+                {parent === null ? DraggableMarkup : null}
+              </Droppable>
             </ul>
           </div>
           <div>
@@ -56,7 +47,11 @@ export const AdminBroadCasting = (): JSX.Element => {
             <ul>
               {containers.map((id) => (
                 <Droppable key={id} id={id}>
-                  {parent === id ? draggableMarkup : <FutureListComponents />}
+                  {parent === id ? (
+                    DraggableMarkup
+                  ) : (
+                    <FutureListComponents type={'featuring'} />
+                  )}
                 </Droppable>
               ))}
             </ul>
@@ -69,7 +64,7 @@ export const AdminBroadCasting = (): JSX.Element => {
               {wraps.map((id) => (
                 <Droppable key={id} id={id}>
                   {parent === id ? (
-                    draggableMarkup
+                    DraggableMarkup
                   ) : (
                     <FutureListComponents type={'afterFeaturing'} />
                   )}
@@ -81,9 +76,4 @@ export const AdminBroadCasting = (): JSX.Element => {
       </DndContext>
     </div>
   );
-
-  function handleDragEnd(event: any) {
-    const { over } = event;
-    setParent(over ? over.id : null);
-  }
 };
